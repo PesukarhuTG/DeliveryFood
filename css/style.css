@@ -14,12 +14,16 @@
     --font-entry-color:#fff;
     --font-promo: #302C34;
     --promo-bg: #FFF1B8;
+    --tag-bg: #262626;
+    --rating-color: #FFC107;
+    --card-text-color:  #8C8C8C;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: var(--main-font-color);
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
 }
 
 .wrapper {
@@ -31,23 +35,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     margin: 44px 0 40px;
 }
 
-.search-input {
+.input {
     border: 1px solid var(--input-border);
     border-radius: 2px;
     background: var(--bgrnd-color);
-    height: 40px;
-    max-width: 690px;
-    width: 100%;
     font-style: 16px;
     line-height: 24px;
-    background-image: url(../img/home.svg);
-    background-repeat: no-repeat;
     background-position: left 11px center;
     padding-left: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.input-adress {
+    max-width: 690px;
+    width: 100%;
+    background-image: url(../img/home.svg);
+    background-repeat: no-repeat;
 }
 
 .buttons {
@@ -85,9 +92,9 @@ body {
     background: var(--promo-bg);
     border-radius: 10px;
     display: flex;
-
     position: relative;
     overflow: hidden;
+    margin-bottom: 56px;
 }
 
 .active-img {
@@ -127,7 +134,6 @@ body {
     }
 }
 
-
 .promo-text {
     margin: 68px 70px;
     z-index: 99;
@@ -142,16 +148,129 @@ body {
     line-height: 46px;
     font-weight: 700;
     color: var(--font-promo);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .promo-description {
     display: block;
-    max-width: 540px;
+    max-width: 538px;
     width: 100%;
     font-size: 24px;
     line-height: 28px;
     font-weight: 400;
     color: var(--font-promo);
+}
 
+/* RESTAURANTS SECTION */
+
+.restaurants-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurants-title {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 700;
+}
+
+.input-search {
+    max-width: 306px;
+    width: 100%;
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+}
+
+/* GOODS SECTION */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 44px;
+    margin-bottom: 90px;
+}
+
+.card {
+    max-width: 384px;
+    width: 100%;
+    border-radius: 7px;
+    background: var(--bgrnd-color);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.card-img {
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 20px 24px 30px;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.card-tag {
+    display: block;
+    width: 55px;
+    background: var(--tag-bg);
+    border-radius: 2px;
+    color: var(--font-entry-color);
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 5px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}    
+
+.rating {
+    margin-right: 26px;
+}
+
+.rating > img {
+    margin-right: 7px;
+}
+
+.rating > span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--rating-color);
+}
+
+.price, .category  {
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--card-text-color);
+    margin-right: 10px;
+}
+
+.category:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--card-text-color);
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 10px;
 }
