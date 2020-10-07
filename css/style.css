@@ -6,8 +6,69 @@
 
 :root {
     --main-font-color: #000;
+    --shadow-color: #000;
+    --input-border: #D9D9D9;
+    --bgrnd-color: #fff;
+    --font-cart: #595959;
+    --btn-entry-bg: #1890FF;
+    --font-entry-color:#fff;
 }
 
 body {
     color: var(--main-font-color);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 20px 0;
+}
+
+.search-input {
+    border: 1px solid var(--input-border);
+    border-radius: 2px;
+    background: var(--bgrnd-color);
+    height: 40px;
+    max-width: 690px;
+    width: 100%;
+    font-style: 16px;
+    line-height: 24px;
+    background-image: url(../img/home.svg);
+    background-repeat: no-repeat;
+    background-position: left 11px center;
+    padding-left: 40px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--bgrnd-color);
+    border: 1px solid var(--input-border);
+    border-radius: 2px;
+    color: var(--font-cart);
+    font-style: 16px;
+    line-height: 24px;
+}
+
+.entry {
+    background: var(--btn-entry-bg);
+    color: var(--font-entry-color);
+    border: 1px solid var(--btn-entry-bg);
+    margin-right: 10px;
+}
+
+.btn-icon {
+    margin-right: 6px;
 }
