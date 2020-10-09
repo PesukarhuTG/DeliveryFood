@@ -1,0 +1,162 @@
+@media (max-width: 1210px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .promo > img.active-img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .promo-description {
+        max-width: 350px;
+    }
+
+    .cards {
+        padding-bottom: 45px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .card {
+        flex-basis: 49%;
+    }
+
+    .promo-title {
+        max-width: 330px;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .promo-description {
+        font-size: 18px;
+    }
+
+    .restaurants-title {
+        font-size: 30px;
+    }
+
+    .footer-link {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 660px;
+    }
+
+    .promo > img.active-img {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .card-info {
+        flex-wrap: wrap;
+    }
+
+    .raiting {
+        flex-basis: 100%;
+    }
+
+    .footer-block {
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 578px) {
+    .container {
+        width: 90%;
+    }
+
+    .promo {
+        margin-bottom: 25px;
+    }
+
+    .promo-text {
+        margin: 30px;
+    }
+
+    .promo-title {
+        max-width: 300px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .promo-description {
+        font-size: 16px;
+        max-width: 270px;
+        line-height: 24px;
+    }
+
+    .restaurants-title {
+        font-size: 23px;
+        line-height: 20px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .input-adress {
+        margin-top: 15px;
+        order: 5;
+        flex: 1;
+    }
+
+    .card {
+        flex-basis: 99%;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+    .footer-link {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .button-text {
+        display: none;
+    }
+
+    .btn-icon {
+        margin-right: 0;
+    }
+
+    .active-img {
+        display: none;
+    }
+
+    .restaurants-heading {
+        flex-direction: column;
+    }
+
+    .input-search {
+        margin-top: 15px;
+        flex: 1;
+    }
+
+    .cards {
+        padding-bottom: 10px;
+    }
+
+}
