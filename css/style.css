@@ -218,7 +218,19 @@ a.card h3.card-title:hover {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.link-card {
     text-decoration: none;
+}
+
+div.card > a.link-card:hover {
+    opacity: 0.8;
+}
+
+div.card:hover {
+    opacity: 0.8;
 }
 
 
@@ -226,9 +238,7 @@ a.card h3.card-title:hover {
     object-fit: cover;
 }
 
-.card:hover {
-    opacity: 0.8;
-}
+
 
 .card-text {
     padding: 20px 24px 30px;
@@ -245,6 +255,7 @@ a.card h3.card-title:hover {
     font-size: 24px;
     line-height: 32px;
     padding-right: 10px;
+    color: var(--font-cart);
 }
 
 .cart-title-reg {
