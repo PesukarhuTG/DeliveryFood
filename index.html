@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./css/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
     </link>
@@ -17,14 +18,16 @@
     <header>
         <div class="container">
             <div class="header">
-                <img src="./img/logo.svg" alt="logo" class="logo">
+                <a href="index.html" class="logo animate__rubberBand">
+                    <img class="animate__animated animate__tada" src="./img/logo.svg" alt="logo">
+                </a>
                 <input type="text" class="input input-adress" placeholder="Адрес доставки">
                 <div class="buttons">
                     <button class="button entry">
                         <img class="btn-icon" src="./img/person.svg" alt="user">
                         <span class="button-text">Войти</span>
                     </button>
-                    <button class="button">
+                    <button class="button cart-btn">
                         <img class="btn-icon" src="./img/cart.svg" alt="cart">
                         <span class="button-text">Корзина</span>
                     </button>
@@ -53,6 +56,7 @@
 
                 <div class="cards">
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image01.png" alt="card-img">
                         <div class="card-text">
@@ -69,8 +73,10 @@
                             </div>
                         </div>
                     </a>
+                 </div>
 
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image02.png" alt="card-img">
                         <div class="card-text">
@@ -87,8 +93,10 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image03.png" alt="card-img">
                         <div class="card-text">
@@ -105,8 +113,10 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image04.png" alt="card-img">
                         <div class="card-text">
@@ -123,8 +133,10 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image05.png" alt="card-img">
                         <div class="card-text">
@@ -141,8 +153,10 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                     <!-- card -->
+                    <div class="animate__animated animate__fadeIn">
                     <a href="restaurant.html" class="card">
                         <img class="card-img" src="./img/image06.png" alt="card-img">
                         <div class="card-text">
@@ -159,6 +173,7 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                 </div>
             </section>
@@ -186,7 +201,92 @@
 
     </footer>
 
-
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title">Корзина</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">-</button>
+                    </div>
+                </div>
+    
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+    
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+    
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+    
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+    
+                <!-- cart position-->
+                <div class="foods-row">
+                    <span class="food-name">Ролл, угорь, стандарт</span>
+                    <span class="food-price">250 ₽</span>
+                    <div class="food-counter">
+                        <button class="counter-button">-</button>
+                        <span class="counter">1</span>
+                        <button class="counter-button">+</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <span class="modal-price-tag">
+                    1250 ₽
+                </span>
+                <div class="footer-button">
+                    <button class="button entry">Оформить заказ</button>
+                    <button class="button">Отмена</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

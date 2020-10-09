@@ -18,6 +18,9 @@
     --rating-color: #FFC107;
     --card-text-color:  #8C8C8C;
     --link-color: #595959;
+    --modal-color: rgba(0, 0, 0, 0.4);
+    --cart-border: #40A9FF;
+    --price-cart-btn: #262626;
 }
 
 body {
@@ -75,6 +78,8 @@ body {
     color: var(--font-cart);
     font-size: 16px;
     line-height: 24px;
+    outline: none;
+    cursor: pointer;
 }
 
 .entry {
@@ -139,7 +144,6 @@ body {
 
 .promo-text {
     margin: 68px 70px;
-    z-index: 99;
 }
 
 .promo-title {
@@ -371,4 +375,104 @@ a.card h3.card-title:hover {
 
 .social-link:not(:last-child) {
     margin-right: 21px;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-color);
+}
+
+.open {
+    display: flex;
+}
+
+.modal-dialog {
+    max-width: 780px;
+    width: 90%;
+    background: var(--bgrnd-color);
+    border-radius: 5px;
+    margin: auto;
+    padding: 40px 45px;
+}
+
+.modal-header, .foods-row, .modal-footer, .footer-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.close {
+    border: 0;
+    background: transparent;
+    font-size: 36px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.foods-row {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom:1px solid var(--input-border);
+}
+
+.food-name {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.food-price {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: auto;
+    margin-right: 47px;
+}
+
+.modal-body {
+    margin-top: 45px;
+}
+
+.counter-button {
+    background: transparent;
+    border: 1px solid var(--cart-border);
+    color: var(--cart-border);
+    border-radius: 2px;
+    padding: 15px 20px;
+}
+
+.counter {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 10px;
+}
+
+
+.modal-footer {
+    margin-top: 52px;
+}
+
+.modal-price-tag {
+    background: var(--price-cart-btn);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--font-entry-color);
+    text-align: center;
+    padding: 15px 20px;
 }
