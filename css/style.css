@@ -167,7 +167,6 @@ body {
 
 .restaurants-heading {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -175,6 +174,7 @@ body {
     font-size: 36px;
     line-height: 42px;
     font-weight: 700;
+    margin-right: 30px;
 }
 
 .input-search {
@@ -183,6 +183,7 @@ body {
     flex: 0.7;
     background-image: url(../img/search.svg);
     background-repeat: no-repeat;
+    margin-left: auto;
 }
 
 /* GOODS SECTION */
@@ -196,6 +197,14 @@ body {
     padding-bottom: 90px;
 }
 
+a.card h3.card-title {
+    color: var(--main-font-color);
+}
+
+a.card h3.card-title:hover {
+    color: var(--link-color);
+}
+
 .card {
     /*max-width: 384px;
     width: 100%;*/
@@ -205,10 +214,16 @@ body {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     margin-bottom: 30px;
+    text-decoration: none;
 }
+
 
 .card-img {
     object-fit: cover;
+}
+
+.card:hover {
+    opacity: 0.8;
 }
 
 .card-text {
@@ -226,6 +241,10 @@ body {
     font-size: 24px;
     line-height: 32px;
     padding-right: 10px;
+}
+
+.cart-title-reg {
+    font-weight: 400;
 }
 
 .card-tag {
@@ -290,6 +309,30 @@ body {
     vertical-align: middle;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.ingridients {
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--card-text-color);
+    margin-right: 10px;
+    margin-bottom: 24px;
+}
+
+.cart-w {
+    margin-left: 4px;
+}
+
+.card-btn {
+    display: flex;
+    align-items: center;
+}
+
+.card-btn-price {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 30px;
 }
 
 /* FOOTER */
