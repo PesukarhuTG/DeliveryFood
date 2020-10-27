@@ -34,7 +34,7 @@ body {
     margin: 0 auto;
 }
 
-.wrapper {
+.main {
     background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
 }
 
@@ -57,8 +57,13 @@ body {
     padding-bottom: 8px;
 }
 
-.input-adress {
+.address {
     flex: 0.8;
+}
+
+
+.input-address {
+    width: 100%;
     background-image: url(../img/home.svg);
     background-repeat: no-repeat;
 }
@@ -82,11 +87,17 @@ body {
     cursor: pointer;
 }
 
-.entry {
-    background: var(--btn-entry-bg);
-    color: var(--font-entry-color);
-    border: 1px solid var(--btn-entry-bg);
+.button-primary {
+    background: #1890ff;
+    border: 1px solid #1890ff;
+    color: #fff;
     margin-right: 10px;
+}
+
+.button-primary:hover {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    color: #595959;
 }
 
 .btn-icon {
@@ -103,6 +114,7 @@ body {
     position: relative;
     overflow: hidden;
     margin-bottom: 56px;
+    padding: 68px 70px;
 }
 
 .active-img {
@@ -142,9 +154,9 @@ body {
     }
 }
 
-.promo-text {
-    margin: 68px 70px;
-}
+.promo-description {
+    margin: 68px 30px;
+} 
 
 .promo-title {
     display: block;
@@ -157,7 +169,7 @@ body {
     margin-bottom: 15px;
 }
 
-.promo-description {
+.promo-text {
     display: block;
     max-width: 538px;
     width: 100%;
@@ -181,9 +193,12 @@ body {
     margin-right: 30px;
 }
 
+.search {
+    margin-left: auto;
+}
+
 .input-search {
-    /* max-width: 306px;
-    width: 100%; */
+    width: 300px;
     flex: 0.7;
     background-image: url(../img/search.svg);
     background-repeat: no-repeat;
@@ -212,20 +227,22 @@ a.card h3.card-title:hover {
 .card {
     /*max-width: 384px;
     width: 100%;*/
-    flex-basis: 31%;
-    border-radius: 7px;
     background: var(--bgrnd-color);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
     overflow: hidden;
     margin-bottom: 30px;
+    flex-basis: 31%;
     cursor: pointer;
-}
-
-.link-card {
     text-decoration: none;
 }
 
-div.card > a.link-card:hover {
+.card-restaurant {
+    text-decoration: none;
+    cursor: pointer
+}
+
+.card-restaurant:hover {
     opacity: 0.8;
 }
 
@@ -234,11 +251,11 @@ div.card:hover {
 }
 
 
-.card-img {
+.card-image {
+    width: 100%;
+    height: 250px;
     object-fit: cover;
 }
-
-
 
 .card-text {
     padding: 20px 24px 30px;
@@ -326,14 +343,6 @@ div.card:hover {
     margin-right: 10px;
 }
 
-.ingridients {
-    font-size: 18px;
-    line-height: 21px;
-    color: var(--card-text-color);
-    margin-right: 10px;
-    margin-bottom: 24px;
-}
-
 .cart-w {
     margin-left: 4px;
 }
@@ -348,6 +357,73 @@ div.card:hover {
     font-size: 20px;
     line-height: 32px;
     margin-left: 30px;
+}
+
+/* HIDE MENU */
+
+.hide {
+    display: none;
+}
+
+.card-title-reg {
+    font-weight: 400;
+}
+
+.ingredients {
+    color: var(--card-text-color);
+    font-size: 18px;
+    line-height: 21px;
+    margin-right: 10px;
+    margin-bottom: 24px;
+}
+
+.card-buttons {
+    display: flex;
+    margin-top: 24px;
+    flex-grow: 1;
+    align-items: flex-end;
+}
+
+.button-card-text {
+    margin-right: 10px;
+}
+
+.button .button-cart-svg {
+    width: 24px;
+    height: 24px;
+    background-color: #595959;
+    -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.button-primary .button-cart-svg {
+    background-color: #fff;
+}
+
+.button:hover .button-cart-svg {
+    background-color: #fff;
+}
+
+.button-primary:hover .button-cart-svg {
+    background-color: #595959;
+}
+
+.card-price-bold {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 30px;
+}
+
+.button-cart {
+    display: none;
+    margin: 0 5px;
+}
+
+.button-out {
+    display: none;
+    margin: 0 5px;
 }
 
 /* FOOTER */
@@ -414,7 +490,7 @@ div.card:hover {
     padding: 40px 45px;
 }
 
-.modal-header, .foods-row, .modal-footer, .footer-button {
+.modal-header, .food-row, .modal-footer, .footer-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -435,7 +511,7 @@ div.card:hover {
     outline: none;
 }
 
-.foods-row {
+.food-row {
     padding-bottom: 10px;
     padding-top: 10px;
     border-bottom:1px solid var(--input-border);
@@ -486,4 +562,50 @@ div.card:hover {
     color: var(--font-entry-color);
     text-align: center;
     padding: 15px 20px;
+}
+
+/* MODAL AUTH */
+
+.modal-auth {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.modal-dialog {
+    max-width: 780px;
+    width: 95%;
+    background: #ffffff;
+    border-radius: 5px;
+    margin: auto;
+    padding: 40px 45px;
+}
+
+.modal-dialog-auth {
+    width: auto;
+    position: relative;
+}
+
+.label-auth {
+    display: block;
+    margin: 30px;
+}
+
+.label-auth span {
+    width: 80px;
+    display: inline-block;
+}
+
+.close-auth {
+    font-size: 36px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
