@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
     </link>
 </head>
 
@@ -25,14 +25,19 @@
                 <input type="text" class="input input-address" placeholder="Адрес доставки" />
             </label>
             <div class="buttons">
-                <button class="button button-primary">
-                    <img class="btn-icon" src="./img/person.svg" alt="user">
+                <span class="user-name"></span>
+                <button class="button button-primary button-auth">
+                    <span class="button-auth-svg"></span>
                     <span class="button-text">Войти</span>
                 </button>
-                <button class="button" id="cart-button">
-                    <img class="btn-icon" src="./img/cart.svg" alt="cart">
+                <button class="button button-cart" id="cart-button">
+                    <span class="button-cart-svg"></span>
                     <span class="button-text">Корзина</span>
                 </button>
+                <button class="button button-primary button-out">
+					<span class="button-text">Выйти</span>
+					<span class="button-out-svg"></span>
+				</button>
             </div>
         </header>
     </div>
@@ -480,14 +485,14 @@
 			<button class="close-auth">&times;</button>
 			<form id="logInForm">
 				<fieldset class="modal-body">
-					<legend class="modal-title">Авторизация</legend>
+					<legend class="modal-title auth-title">Авторизация</legend>
 					<label class="label-auth">
 						<span>Логин</span>
-						<input id="login" type="text">
+						<input class="auth-form" id="login" type="text">
 					</label>
 					<label class="label-auth">
 						<span>Пароль</span>
-						<input id="password" type="password">
+						<input class="auth-form" id="password" type="password">
 					</label>
 				</fieldset>
 				<!-- /.modal-body -->
@@ -502,7 +507,7 @@
 		<!-- /.modal-dialog -->
 	</div>
 
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
     <script src="./js/script.js"></script>
 </body>
 

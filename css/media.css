@@ -142,6 +142,10 @@
         margin-right: 0;
     }
 
+    .user-name {
+        margin: 10px;
+    }
+
     .active-img {
         display: none;
     }
