@@ -22,6 +22,7 @@ const toggleModal = () => {
 //authorization 
 const toggleModalAuth = () => {
     modalAuth.classList.toggle('open');
+    loginInput.style.border = '';
 };
 
 const checkAuth = () => {
@@ -35,22 +36,21 @@ const checkAuth = () => {
 const logIn = (e) => {
     e.preventDefault();
 
-    if (!loginInput.value) {
-        alert('Введите логин для авторизации');
+    if (loginInput.value.trim()) {
+        login = loginInput.value;
+        localStorage.setItem('delivery', login);
+        toggleModalAuth();
+
+        authBtn.removeEventListener('click', toggleModalAuth);
+        closeAuth.removeEventListener('click', toggleModalAuth);
+        logInForm.removeEventListener('submit', logIn);
+        logInForm.reset();
+        checkAuth();
     } else {
-
-    login = loginInput.value;
-
-    localStorage.setItem('delivery', login);
-
-    toggleModalAuth();
-    authBtn.removeEventListener('click', toggleModalAuth);
-    closeAuth.removeEventListener('click', toggleModalAuth);
-    logInForm.removeEventListener('submit', logIn);
-    logInForm.reset();
-    checkAuth();
+        // alert('Введите логин для авторизации');
+        loginInput.style.border = '2px solid #ff0000';
+        loginInput.value = '';
     }
-
 };
 
 const authorized = () => {
@@ -80,6 +80,12 @@ const notAuthorized = () => {
     authBtn.addEventListener('click', toggleModalAuth);
     closeAuth.addEventListener('click', toggleModalAuth);
     logInForm.addEventListener('submit', logIn);
+    modalAuth.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.classList.contains('open')) {
+            toggleModalAuth();
+        }
+    });
     
 };
 
