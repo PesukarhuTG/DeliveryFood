@@ -160,29 +160,23 @@ const createCardGood = () => {
 const openGoods = (e) => {
 
     const target = e.target;
-    const restaurant = target.closest('.card-restaurant');
 
-    if (restaurant) {
+    if (login) {
+        const restaurant = target.closest('.card-restaurant');
 
-        //check authorization
-        if (!login) {
-            modalAuth.classList.toggle('open');
-        } else {
+        if (restaurant) {
             cardsMenu.textContent = '';
             containerPromo.classList.add('hide');
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
-
+    
             createCardGood();
             createCardGood();
         }
-
+    } else {
+        toggleModalAuth();
     }
 };
-
-
-
-
 
 
 cartBtn.addEventListener('click', toggleModal);
