@@ -27,6 +27,12 @@ const toggleModal = () => {
     modalCart.classList.toggle('open');
 };
 
+//validation
+const validName = (str) => {
+    const regName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+    return regName.test(str); //test is method for reg
+};
+
 //authorization 
 const toggleModalAuth = () => {
     modalAuth.classList.toggle('open');
@@ -49,7 +55,7 @@ const checkAuth = () => {
 const logIn = (e) => {
     e.preventDefault();
 
-    if (loginInput.value.trim()) {
+    if (validName(loginInput.value)) {
         login = loginInput.value;
         localStorage.setItem('delivery', login);
         toggleModalAuth();
