@@ -256,7 +256,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 44px;
     padding-bottom: 90px;
 }
@@ -280,6 +280,10 @@ a.card h3.card-title:hover {
     flex-basis: 31%;
     cursor: pointer;
     text-decoration: none;
+}
+
+.card:not(:last-child) {
+    margin-right: 20px;
 }
 
 .card-restaurant {
