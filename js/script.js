@@ -23,6 +23,11 @@ const toggleModal = () => {
 const toggleModalAuth = () => {
     modalAuth.classList.toggle('open');
     loginInput.style.border = '';
+    if (modalAuth.classList.contains('open')) {
+        disableScroll();
+    } else {
+        enableScroll();
+    }
 };
 
 const checkAuth = () => {
