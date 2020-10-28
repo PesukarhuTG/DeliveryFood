@@ -152,14 +152,29 @@ body {
 /* PROMO SECTION*/
 
 .promo {
-    box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
     background: var(--promo-bg);
     border-radius: 10px;
     display: flex;
     position: relative;
     overflow: hidden;
     padding: 35px 40px;
+}
+
+.swiper-container {
     margin-bottom: 50px;
+}
+
+.promo-pizza {
+    background: var(--promo-bg);
+}
+.promo-kebab {
+    background: #D6E4FF;
+}
+.promo-vegetables {
+    background:#FFF1F0;
+}
+.promo-sushi {
+    background:  #FFF566;
 }
 
 .active-img {
@@ -670,5 +685,11 @@ div.card:hover {
     top: 10px;
     right: 20px;
     cursor: pointer;
+}
+
+/* SWUPER */
+
+.swiper-wrapper {
+    margin-bottom: 25px;
 }
 

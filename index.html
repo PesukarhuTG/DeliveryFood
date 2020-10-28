@@ -9,9 +9,10 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
+    
     </link>
 </head>
 
@@ -44,45 +45,50 @@
 
     <main class="main">
         <div class="container">
-            <section class="container-promo">
-
-                <section class="promo promo-pizza">
-                    <div class="promo-description">
-                        <h1 class="promo-title">Онлайн-сервис доставки еды на&nbsp;дом</h1>
-                        <p class="promo-text">Блюда из&nbsp; любимого ресторана привезет
-                            курьер в&nbsp;перчатках, маске и с&nbsp;антисептиком</p>
-                    </div>
-                    <img class="active-img pizza" src="./img/promo/pizza.png" alt="pizza">
-                </section>
-                <!-- <section class="promo promo-kebab">
+            <div class="swiper-container">
+                <section class="container-promo swiper-wrapper">
+                    <section class="promo promo-pizza swiper-slide">
                         <div class="promo-description">
-                            <h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+                            <h2 class="promo-title">Онлайн-сервис доставки еды на&nbsp;дом</h2>
+                            <p class="promo-text">Блюда из&nbsp; любимого ресторана привезет
+                                курьер в&nbsp;перчатках, маске и с&nbsp;антисептиком</p>
+                        </div>
+                        <img class="active-img pizza" src="./img/promo/pizza.png" alt="pizza">
+                    </section>
+                    <section class="promo promo-kebab swiper-slide">
+                        <div class="promo-description">
+                            <h2 class="promo-title">Шашлыки на&nbsp;майские <br>со&nbsp;скидкой&nbsp;35%</h2>
                             <p class="promo-text">
-                                Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+                                Закажите шашлыки в&nbsp;любом ресторане до&nbsp;10&nbsp;мая и&nbsp;получите
+                                скидку по&nbsp;промокоду OMAGAD
                             </p>
                         </div>
-                        <img class="active-img pizza" src="./img/promo/pizza.png" alt="kebab">
-				</section>
-				<section class="promo promo-vegetables">
-                    <div class="promo-description">
-                        <h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
-                        <p class="promo-text">
-                            Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
-                        </p>
-                    </div>
-                    <img class="active-img pizza" src="./img/promo/pizza.png" alt="vegetables">
-				</section>
-				<section class="promo promo-sushi">
-                    <div class="promo-description">
-                        <h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
-                        <p class="promo-text">
-                            Скидки на сеты до 30 мая по промокоду DADADA
-                        </p>
-                    </div>
-                    <img class="active-img pizza" src="./img/promo/pizza.png" alt="sushi">
-				</section> -->
+                        <img class="active-img pizza" src="./img/promo/kebab.png" alt="kebab">
+                    </section>
+                    <section class="promo promo-vegetables swiper-slide">
+                        <div class="promo-description">
+                            <h2 class="promo-title">Скидка&nbsp;20% на&nbsp;всю еду <br>по&nbsp;промокоду LOVE.JS</h2>
+                            <p class="promo-text">
+                                Блюдо из&nbsp;ресторана привезут вместе с&nbsp;двумя подарочными книгами
+                                по&nbsp;фронтенду
+                            </p>
+                        </div>
+                        <img class="active-img pizza" src="./img/promo/vegetables.png" alt="vegetables">
+                    </section>
+                    <section class="promo promo-sushi swiper-slide">
+                        <div class="promo-description">
+                            <h2 class="promo-title">Сеты со&nbsp;скидкой до&nbsp;30% <br>в&nbsp;ресторанах</h2>
+                            <p class="promo-text">
+                                Скидки на&nbsp;сеты до&nbsp;30&nbsp;мая по&nbsp;промокоду DADADA
+                            </p>
+                        </div>
+                        <img class="active-img pizza" src="./img/promo/sushi.png" alt="sushi">
+                    </section>
 
-            </section>
+                </section>
+                <!-- <div class="swiper-pagination"></div> -->
+                <div class="swiper-scrollbar"></div>
+            </div>
 
             <section class="restaurants">
                 <div class="restaurants-heading">
@@ -248,7 +254,7 @@
         <!-- /.modal-dialog -->
     </div>
 
-    <!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/disabledScroll.js"></script>
     <script src="./js/script.js"></script>
 </body>

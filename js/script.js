@@ -1,4 +1,5 @@
 "use strict";
+
 const cartBtn = document.querySelector('#cart-button');
 const modalCart = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
@@ -192,3 +193,20 @@ checkAuth();
 createCardRestaurant();
 createCardRestaurant();
 createCardRestaurant();
+
+
+//SLIDER SWIPER
+
+new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: true,
+    speed: 400,
+    spaceBetween: 10,
+    direction: 'horizontal',
+    effect: 'fade',
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        },
+});
