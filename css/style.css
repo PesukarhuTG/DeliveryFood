@@ -153,6 +153,7 @@ body {
 
 .promo {
     background: var(--promo-bg);
+    height: 410px;
     border-radius: 10px;
     display: flex;
     position: relative;
@@ -364,7 +365,15 @@ div.card:hover {
 }    
 
 .rating {
+    background-image: url("../img/icon/rating.svg");
+    background-repeat: no-repeat;
+    background-position: 0 7px;
+    padding-left: 20px;
     margin-right: 26px;
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
     white-space: nowrap;
 }
 

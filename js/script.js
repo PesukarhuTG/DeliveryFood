@@ -3,22 +3,23 @@
 const cartBtn = document.querySelector('#cart-button');
 const modalCart = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
-
 const authBtn = document.querySelector('.button-auth');
 const modalAuth = document.querySelector('.modal-auth');
 const closeAuth = document.querySelector('.close-auth');
-
 const logInForm = document.querySelector('#logInForm');
 const loginInput = document.querySelector('#login');
 const userName = document.querySelector('.user-name');
 const outBtn = document.querySelector('.button-out');
-
 const cardsRestaurants = document.querySelector('.cards-restaurants');
 const containerPromo = document.querySelector('.container-promo');
 const restaurants = document.querySelector('.restaurants');
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const cardsMenu = document.querySelector('.cards-menu');
+const restaurantTitle = document.querySelector('.restaurant-title');
+const restaurantrating = document.querySelector('.rating');
+const restaurantPrice = document.querySelector('.price');
+const restaurantCategory = document.querySelector('.category');
 
 let login = localStorage.getItem('delivery');
 
@@ -122,8 +123,12 @@ const createCardRestaurant = (restaurant) => {
     //десруктуировали данные, чтобы достать их поотдельности
     const { image, kitchen, name, price, stars, products, time_of_delivery: timeOfDelivery } = restaurant;
 
+    const cardsRestaurant = document.createElement('a');
+    cardsRestaurant.className = 'card card-restaurant';
+    cardsRestaurant.products = products;
+    cardsRestaurant.info = { kitchen, name, price, stars };
+
     const card = `
-    <a class="card card-restaurant" data-products="${products}">
         <img class="card-image" src="${image}" alt="card-img">
         <div class="card-text">
             <div class="card-heading">
@@ -132,17 +137,16 @@ const createCardRestaurant = (restaurant) => {
             </div>
             <div class="card-info">
                 <div class="rating">
-                    <img src="./img/star.svg" alt="star">
                     <span>${stars}</span>
                 </div>
             <div class="price">от ${price} ₽</div>
             <div class="category">${kitchen}</div>
             </div>
         </div>
-    </a>
     `;
 
-    cardsRestaurants.insertAdjacentHTML('beforeend', card);
+    cardsRestaurant.insertAdjacentHTML('beforeend', card);
+    cardsRestaurants.insertAdjacentElement('beforeend', cardsRestaurant);
 
 };
 
@@ -155,13 +159,13 @@ const createCardGood = (goods) => {
     card.className = 'card';
 
     card.insertAdjacentHTML('afterbegin', `
-			<img src="${image}" alt="image" class="card-image"/>
+			<img src=${image} alt=${name} class="card-image"/>
 				<div class="card-text">
 					<div class="card-heading">
 						<h3 class="card-title card-title-reg">${name}</h3>
 					</div>
 					<div class="card-info">
-						<div class="ingredients">${description}</div>
+						<p class="ingredients">${description}</p>
 					</div>
 					<div class="card-buttons">
 						<button class="button button-primary button-add-cart">
@@ -190,8 +194,15 @@ const openGoods = (e) => {
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
 
+            const { kitchen, name, price, stars } = restaurant.info;
+
+            restaurantTitle.textContent = name;
+            restaurantrating.textContent = stars;
+            restaurantPrice.textContent = `от ${price} ₽`;
+            restaurantCategory.textContent = kitchen;
+
             //брабатываем ответ промиса 
-            getData(`./db/${restaurant.dataset.products}`)
+            getData(`./db/${restaurant.products}`)
             .then(function(data) {
                 data.forEach(createCardGood);
             });
