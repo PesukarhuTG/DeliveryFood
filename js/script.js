@@ -20,6 +20,7 @@ const restaurantTitle = document.querySelector('.restaurant-title');
 const restaurantrating = document.querySelector('.rating');
 const restaurantPrice = document.querySelector('.price');
 const restaurantCategory = document.querySelector('.category');
+const inputSearch = document.querySelector('.input-search');
 
 let login = localStorage.getItem('delivery');
 
@@ -231,25 +232,74 @@ function init() {
 
     checkAuth();
 
-    //SLIDER SWIPER
+    //реализация поиска
+    inputSearch.addEventListener('keypress', (e) => {
 
-    new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: true,
-        speed: 400,
-        spaceBetween: 10,
-        direction: 'horizontal',
-        effect: 'fade',
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-            },
+        if (e.charCode === 13) {
+
+            const value =  e.target.value.trim();
+            
+            if (!value) {
+                e.target.style.backgroundColor = '#fdcaca';
+                e.target.value = '';
+                setTimeout(() => {
+                    e.target.style.backgroundColor = '';
+                }, 1500); //очищаем поле поиска после 1.5с
+                return;
+            }
+
+            getData('./db/partners.json')
+                .then(function (data) { //делаем запрос, получаем всех партнеров
+                    return data.map(function(partner) {
+                        return partner.products;
+                    });//перебираем данные, возвращая массив
+                })
+                .then(function(linksProduct) {
+                    cardsMenu.textContent = '';
+
+                    linksProduct.forEach(function(link) {
+                        getData(`./db/${link}`)
+                            .then(function(goods) {
+
+                                const resultSearch = goods.filter(function(item) {
+                                    const name = item.name.toLowerCase();
+                                    return name.includes(value.toLowerCase()); //возвращаем только те карточки, ктр-е совпадают с value
+                                });
+                                
+                                containerPromo.classList.add('hide');
+                                restaurants.classList.add('hide');
+                                menu.classList.remove('hide');
+
+                                restaurantTitle.textContent = 'Результат поиска';
+                                restaurantrating.textContent = '';
+                                restaurantPrice.textContent = '';
+                                restaurantCategory.textContent = 'разная кухня';
+
+                                resultSearch.forEach(createCardGood);
+                            });
+                    });
+                });
+        }
     });
-    
 }
 
 init();
+
+//SLIDER SWIPER
+
+new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: true,
+    speed: 400,
+    spaceBetween: 10,
+    direction: 'horizontal',
+    effect: 'fade',
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        },
+});
 
 
 
