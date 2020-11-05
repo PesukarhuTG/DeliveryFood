@@ -49,7 +49,7 @@ body {
     border: 1px solid var(--input-border);
     border-radius: 2px;
     background: var(--bgrnd-color);
-    font-style: 16px;
+    font-size: 16px;
     line-height: 24px;
     background-position: left 11px center;
     padding-left: 40px;
@@ -135,15 +135,40 @@ body {
     background-repeat: no-repeat;
 }
 
-.button-primary .button-cart-svg {
-    background-color: #fff;
+.button-cart:hover {
+    border: 1px solid#1890ff;
+    color: #1890ff;
 }
 
-.button:hover .button-cart-svg {
-    background-color: #fff;
+.button-cart:hover .button-cart-svg {
+    background-color:#1890ff;
 }
 
-.button-primary:hover .button-cart-svg {
+.button-out-svg {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    -webkit-mask: url('../img/icon/logout.svg') no-repeat 50% 50%;
+    mask: url(../img/icon/logout.svg) no-repeat 50% 50%;
+    background-repeat: no-repeat;
+    -webkit-mask-size: 20px;
+    mask-size: 20px;
+}
+
+.button-primary:hover .button-out-svg {
+    background-color: #595959;
+}
+
+.button-cart-svg-incard {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.button-primary:hover .button-cart-svg-incard {
     background-color: #595959;
 }
 
@@ -273,6 +298,7 @@ body {
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: stretch;
     margin-top: 44px;
     padding-bottom: 90px;
@@ -293,6 +319,8 @@ a.card h3.card-title:hover {
     overflow: hidden;
     padding-bottom: 30px;
     margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
     flex-basis: 31%;
     cursor: pointer;
     text-decoration: none;
@@ -300,10 +328,6 @@ a.card h3.card-title:hover {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-}
-
-.card:not(:last-child) {
-    margin-right: 20px;
 }
 
 .card-restaurant {
@@ -472,26 +496,7 @@ div.card:hover {
     margin-right: 10px;
 }
 
-.button .button-cart-svg {
-    width: 24px;
-    height: 24px;
-    background-color: #595959;
-    -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
-    mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
-    background-repeat: no-repeat;
-}
 
-.button-primary .button-cart-svg {
-    background-color: #fff;
-}
-
-.button:hover .button-cart-svg {
-    background-color: #fff;
-}
-
-.button-primary:hover .button-cart-svg {
-    background-color: #595959;
-}
 
 .card-price-bold {
     font-weight: bold;
@@ -510,16 +515,7 @@ div.card:hover {
     margin: 0 5px;
 }
 
-.button-out-svg {
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-    -webkit-mask: url('../img/icon/logout.svg') no-repeat 50% 50%;
-    mask: url(../img/icon/logout.svg) no-repeat 50% 50%;
-    background-repeat: no-repeat;
-    -webkit-mask-size: 20px;
-    mask-size: 20px;
-}
+
 
 /* FOOTER */
 

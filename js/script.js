@@ -179,7 +179,7 @@ const createCardGood = (goods) => {
             <div class="card-buttons">
 				<button class="button button-primary button-add-cart" id="${id}">
 					<span class="button-card-text">В корзину</span>
-					<span class="button-cart-svg"></span>
+					<span class="button-cart-svg-incard"></span>
 				</button>
 				<strong class="card-price-bold card-price">${price} ₽</strong>
 			</div>

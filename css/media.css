@@ -23,17 +23,30 @@
     }
 
     .card {
-        flex-basis: 49%;
+        flex-basis: 40%;
+    }
+
+    .promo {
+        height: 300px;
     }
 
     .promo-title {
         max-width: 330px;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 35px;
     }
 
     .promo-description {
-        font-size: 18px;
+        margin: 0;
+    }
+
+    .promo-text {
+        font-size: 20px;
+    }
+
+    .promo > img.active-img {
+        min-width: 350px;
+        min-height: 350px;
     }
 
     .restaurants-title {
@@ -52,16 +65,58 @@
     }
 
     .promo > img.active-img {
-        max-width: 250px;
-        max-height: 250px;
+        max-width: 150px;
+        max-height: 150px;
+        position: absolute;
+        right: -100px;
+        top: -20px;
+    }
+
+    .promo-title {
+        max-width: 300px;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    .promo-text {
+        display: block;
+        max-width: 300px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        line-height: 23px;
     }
 
     .card-info {
         flex-wrap: wrap;
     }
 
+    .ingredients {
+        font-size: 16px;
+    }
+
     .raiting {
         flex-basis: 100%;
+    }
+
+    .rating > span, .price, .category {
+        font-size: 16px;
+    }
+
+    .card-buttons {
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+
+    .button-card-text {
+        margin-right: 3px;
+    }
+
+    .card-price-bold {
+        font-size: 18px;
+        margin-left: 10px;
+
     }
 
     .footer-block {
@@ -79,24 +134,32 @@
         width: 90%;
     }
 
-    .promo {
-        margin-bottom: 25px;
+    .address {
+        display: none;
     }
 
-    .promo-text {
-        margin: 30px;
+    .swiper-container {
+        margin-bottom: 50px;
+    }
+
+    .promo {
+        height: 250px;
+    }
+
+    .promo > img.active-img {
+        right: -170px;
     }
 
     .promo-title {
-        max-width: 300px;
+        max-width: 250px;
         font-size: 20px;
         line-height: 25px;
     }
 
-    .promo-description {
+    .promo-text {
+        max-width: 230px;
         font-size: 16px;
-        max-width: 270px;
-        line-height: 24px;
+        line-height: 1.5;
     }
 
     .restaurants-title {
@@ -112,6 +175,10 @@
         margin-top: 15px;
         order: 5;
         flex: 1;
+    }
+
+    .card-buttons {
+        margin-top: 0;
     }
 
     .card {
@@ -133,6 +200,22 @@
 }
 
 @media (max-width: 480px) {
+
+    .promo-title {
+        max-width: 100%;
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .promo-text {
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .search {
+        margin: 0;
+    }
 
     .button-text {
         display: none;
