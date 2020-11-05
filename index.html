@@ -18,9 +18,17 @@
 
 <body>
     <div class="container">
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" class="switch-input" data-theme-toggle>
+                <span class="switch-slider"></span>
+            </label>
+        </div>
         <header class="header">
             <a href="index.html" class="logo animate__rubberBand">
-                <img class="animate__animated animate__tada" src="./img/logo.svg" alt="logo">
+                <svg class="icon-logo animate__animated animate__tada" width="120" height="70">
+                    <use xlink:href="img/icon/logoDF.svg#logo"></use>
+                  </svg>
             </a>
             <label class="address">
                 <input type="text" class="input input-address" placeholder="Адрес доставки" />
@@ -123,7 +131,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-block">
-                <img class="footer-logo logo" src="./img/logo.svg" alt="logo">
+                <svg class="icon-logo animate__animated animate__tada" width="120" height="70">
+                    <use xlink:href="img/icon/logoDF.svg#logo"></use>
+                  </svg>
                 <nav class="footer-nav">
                     <a href="#" class="footer-link">Ресторанам</a>
                     <a href="#" class="footer-link">Курьерам</a>
@@ -131,7 +141,7 @@
                     <a href="#" class="footer-link">Контакты</a>
                 </nav>
                 <div class="social-links">
-                    <a href="#" class="social-link"><img src="./img/insta.svg" alt=insta""></a>
+                    <a href="#" class="social-link"><img src="./img/insta.svg" alt="insta"></a>
                     <a href="#" class="social-link"><img src="./img/fb.svg" alt="fb"></a>
                     <a href="#" class="social-link"><img src="./img/vk.svg" alt="vk"></a>
                 </div>

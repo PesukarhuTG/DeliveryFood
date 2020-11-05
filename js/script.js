@@ -24,6 +24,8 @@ const inputSearch = document.querySelector('.input-search');
 const modalBody = document.querySelector('.modal-body');
 const modalPrice = document.querySelector('.modal-price-tag');
 const buttonClearCart = document.querySelector('.clear-cart');
+const stylesheet = document.documentElement.style;
+const switcher = document.querySelector('.switch-input[data-theme-toggle]');
 
 
 let login = localStorage.getItem('delivery');
@@ -405,6 +407,20 @@ new Swiper('.swiper-container', {
         draggable: true,
         },
 });
+
+//SWITCHER
+
+switcher.addEventListener('click', () => {
+
+    const color1 = getComputedStyle(document.documentElement).getPropertyValue('--color-1');
+    const color2 = getComputedStyle(document.documentElement).getPropertyValue('--color-2');
+
+    stylesheet.setProperty('--color-1', color2);
+    stylesheet.setProperty('--color-2', color1);
+
+});
+
+
 
 
 
