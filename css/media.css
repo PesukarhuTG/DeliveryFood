@@ -282,6 +282,14 @@
         padding-bottom: 10px;
     }
 
+    .footer-link:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .footer-link {
+        margin: 5px;
+    }
+
 }
 
 @media (max-width: 380px) {
