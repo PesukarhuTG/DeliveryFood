@@ -71,6 +71,8 @@ body {
 .buttons {
     display: flex;
     align-items: center;
+
+
 }
 
 .user-name {
@@ -272,7 +274,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    justify-content: flex-start;
     margin-top: 44px;
     padding-bottom: 90px;
 }
@@ -286,16 +287,19 @@ a.card h3.card-title:hover {
 }
 
 .card {
-    /*max-width: 384px;
-    width: 100%;*/
     background: var(--bgrnd-color);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 7px;
     overflow: hidden;
+    padding-bottom: 30px;
     margin-bottom: 30px;
     flex-basis: 31%;
     cursor: pointer;
     text-decoration: none;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 .card:not(:last-child) {
@@ -323,13 +327,14 @@ div.card:hover {
 }
 
 .card-text {
-    padding: 20px 24px 30px;
+    /* padding: 20px 24px 30px; */
 }
 
 .card-heading {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .card-title {
@@ -338,6 +343,8 @@ div.card:hover {
     line-height: 32px;
     padding-right: 10px;
     color: var(--font-cart);
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .cart-title-reg {
@@ -361,6 +368,8 @@ div.card:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
     margin-top: 10px;
 }    
 
@@ -453,8 +462,10 @@ div.card:hover {
 .card-buttons {
     display: flex;
     margin-top: 24px;
-    flex-grow: 1;
-    align-items: flex-end;
+    align-items: center;
+
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .button-card-text {

@@ -138,20 +138,19 @@ const createCardRestaurant = (restaurant) => {
     cardsRestaurant.info = { kitchen, name, price, stars };
 
     const card = `
-        <img class="card-image" src="${image}" alt="card-img">
-        <div class="card-text">
-            <div class="card-heading">
-                <h3 class="card-title">${name}</h3>
-                <span class="card-tag tag">${timeOfDelivery} мин.</span>
-            </div>
-            <div class="card-info">
-                <div class="rating">
-                    <span>${stars}</span>
+            <div class="card-text">
+                <img class="card-image" src="${image}" alt="card-img">
+                <div class="card-heading">
+                    <h3 class="card-title">${name}</h3>
+                    <span class="card-tag tag">${timeOfDelivery} мин.</span>
                 </div>
-            <div class="price">от ${price} ₽</div>
-            <div class="category">${kitchen}</div>
-            </div>
-        </div>
+                <div class="card-info">
+                    <div class="rating"><span>${stars}</span></div>
+                    <div class="price">от ${price} ₽</div>
+                    <div class="category">${kitchen}</div>
+                </div>
+            </div>    
+            
     `;
 
     cardsRestaurant.insertAdjacentHTML('beforeend', card);
@@ -168,22 +167,22 @@ const createCardGood = (goods) => {
     card.className = 'card';
 
     card.insertAdjacentHTML('afterbegin', `
-			<img src=${image} alt=${name} class="card-image"/>
-				<div class="card-text">
-					<div class="card-heading">
-						<h3 class="card-title card-title-reg">${name}</h3>
-					</div>
-					<div class="card-info">
-						<p class="ingredients">${description}</p>
-					</div>
-					<div class="card-buttons">
-						<button class="button button-primary button-add-cart" id="${id}">
-							<span class="button-card-text">В корзину</span>
-							<span class="button-cart-svg"></span>
-						</button>
-						<strong class="card-price-bold card-price">${price} ₽</strong>
-					</div>
+            <div class="card-text">
+                <img src=${image} alt=${name} class="card-image"/>
+				<div class="card-heading">
+					<h3 class="card-title card-title-reg">${name}</h3>
 				</div>
+				<div class="card-info">
+					<p class="ingredients">${description}</p>
+                </div>
+            </div>    
+            <div class="card-buttons">
+				<button class="button button-primary button-add-cart" id="${id}">
+					<span class="button-card-text">В корзину</span>
+					<span class="button-cart-svg"></span>
+				</button>
+				<strong class="card-price-bold card-price">${price} ₽</strong>
+			</div>
     `);
 
     cardsMenu.insertAdjacentElement('beforeend', card);
