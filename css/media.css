@@ -197,6 +197,42 @@
         font-size: 16px;
     }
 
+    .counter-button {
+        padding: 10px 15px;
+    }
+
+    .food-price {
+        margin-right: 20px;
+    }
+
+    .modal-dialog {
+        padding: 40px 25px;
+    }
+
+    .food-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .food-name {
+        flex-basis:100%;
+    }
+    
+    .food-price {
+        margin-left:0;
+    }
+
+    .modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer-button {
+        display: flex;
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
 }
 
 @media (max-width: 480px) {

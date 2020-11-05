@@ -702,7 +702,7 @@ div.card:hover {
 .modal-dialog-auth {
     width: auto;
     position: relative;
-    max-height: 400px;
+    max-height: 470px;
     height: 100%;
 }
 
