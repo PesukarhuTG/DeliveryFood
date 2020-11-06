@@ -42,6 +42,8 @@ const modalPrice = document.querySelector('.modal-price-tag');
 const buttonClearCart = document.querySelector('.clear-cart');
 const stylesheet = document.documentElement.style;
 const switcher = document.querySelector('.switch-input[data-theme-toggle]');
+const btnSendCart = document.querySelector('.button-send-cart');
+
 
 let login = localStorage.getItem('delivery');
 const cart = JSON.parse(localStorage.getItem(`delivery_${login}`)) || [];
@@ -51,6 +53,7 @@ const saveCart = () => {
     localStorage.setItem(`delivery_${login}`, JSON.stringify(cart));
 };
 
+//download cart list from localStorage
 const downloadCart = () => {
     if (localStorage.getItem(`delivery_${login}`)) {
         const data = JSON.parse(localStorage.getItem(`delivery_${login}`));
@@ -365,6 +368,7 @@ function init() {
     cardsMenu.addEventListener('click', addToCart);
     cardsRestaurants.addEventListener('click', openGoods); //click on card through delegation
 
+
     logo.addEventListener('click', () => {
         containerPromo.classList.remove('hide');
         swiper.init();
@@ -427,6 +431,14 @@ function init() {
 }
 
 init();
+
+btnSendCart.addEventListener('click', () => {
+    toggleModal();
+    alert('Благодарим вас за заказ! Как только будет реализована серверная часть сайта, с вами свяжется наш менеджер для подтверждения заказа');
+    cart.length = 0;
+    returnMain();
+    
+});
 
 //SWITCHER
 
