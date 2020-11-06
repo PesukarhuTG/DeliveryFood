@@ -1,5 +1,21 @@
 "use strict";
 
+//SLIDER SWIPER
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: true,
+    speed: 400,
+    spaceBetween: 10,
+    direction: 'horizontal',
+    effect: 'fade',
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        },
+});
+
 const cartBtn = document.querySelector('#cart-button');
 const modalCart = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
@@ -27,10 +43,20 @@ const buttonClearCart = document.querySelector('.clear-cart');
 const stylesheet = document.documentElement.style;
 const switcher = document.querySelector('.switch-input[data-theme-toggle]');
 
-
 let login = localStorage.getItem('delivery');
+const cart = JSON.parse(localStorage.getItem(`delivery_${login}`)) || [];
 
-const cart = [];
+//save cart data in localStorage
+const saveCart = () => {
+    localStorage.setItem(`delivery_${login}`, JSON.stringify(cart));
+};
+
+const downloadCart = () => {
+    if (localStorage.getItem(`delivery_${login}`)) {
+        const data = JSON.parse(localStorage.getItem(`delivery_${login}`));
+        cart.push(...data);
+    }
+};
 
 //get data from db
 const getData = async function(url) {
@@ -78,6 +104,7 @@ const logIn = (e) => {
         login = loginInput.value;
         localStorage.setItem('delivery', login);
         toggleModalAuth();
+        downloadCart();
 
         authBtn.removeEventListener('click', toggleModalAuth);
         closeAuth.removeEventListener('click', toggleModalAuth);
@@ -85,16 +112,24 @@ const logIn = (e) => {
         logInForm.reset();
         checkAuth();
     } else {
-        // alert('Введите логин для авторизации');
         loginInput.style.border = '2px solid #ff0000';
         loginInput.value = '';
     }
+};
+
+const returnMain = () => {
+    containerPromo.classList.remove('hide');
+    swiper.init();
+    restaurants.classList.remove('hide');
+    menu.classList.add('hide');
+
 };
 
 const authorized = () => {
 
     const logOut = () => {
         login = null;
+        cart.length = 0;
         localStorage.removeItem('delivery');
         authBtn.style.display = '';
         userName.style.display = '';
@@ -102,9 +137,8 @@ const authorized = () => {
         cartBtn.style.display = '';
         outBtn.removeEventListener('click', logOut);
         checkAuth();
+        returnMain();
     };
-
-    console.log('Авторизован');
 
     userName.textContent = login;
     authBtn.style.display = 'none';
@@ -116,7 +150,6 @@ const authorized = () => {
 };
 
 const notAuthorized = () => {
-    console.log('Не авторизован');
     authBtn.addEventListener('click', toggleModalAuth);
     closeAuth.addEventListener('click', toggleModalAuth);
     logInForm.addEventListener('submit', logIn);
@@ -131,7 +164,7 @@ const notAuthorized = () => {
 //generate cards of restaurants
 const createCardRestaurant = (restaurant) => {
 
-    //десруктуировали данные, чтобы достать их поотдельности
+    //destructurization
     const { image, kitchen, name, price, stars, products, time_of_delivery: timeOfDelivery } = restaurant;
 
     const cardsRestaurant = document.createElement('a');
@@ -151,7 +184,7 @@ const createCardRestaurant = (restaurant) => {
                     <div class="price">от ${price} ₽</div>
                     <div class="category">${kitchen}</div>
                 </div>
-            </div>    
+            </div>
             
     `;
 
@@ -201,6 +234,7 @@ const openGoods = (e) => {
         if (restaurant) {
             cardsMenu.textContent = '';
             containerPromo.classList.add('hide');
+            swiper.destroy(false);
             restaurants.classList.add('hide');
             menu.classList.remove('hide');
 
@@ -211,7 +245,7 @@ const openGoods = (e) => {
             restaurantPrice.textContent = `от ${price} ₽`;
             restaurantCategory.textContent = kitchen;
 
-            //брабатываем ответ промиса 
+            //analyze Promise answer
             getData(`./db/${restaurant.products}`)
             .then(function(data) {
                 data.forEach(createCardGood);
@@ -237,8 +271,7 @@ function addToCart(e) {
             return item.id === id;
         });
 
-        //если еда существует, увеличиваем count,
-        //иначе создаем новую позицию
+        //if 'food' is => count+1, else create new item in cart
         if (food) {
             food.count += 1;
         } else {
@@ -249,12 +282,12 @@ function addToCart(e) {
                 count: 1,
             });
         }
+        saveCart();
     }
 }
 
 function renderCart() {
     modalBody.textContent = '';
-    
 
     cart.forEach(item => {
 
@@ -280,6 +313,7 @@ function renderCart() {
     }, 0);
 
     modalPrice.textContent = `${totalPrice} ₽`;
+    saveCart();
 }
 
 function changeCount(e) {
@@ -294,9 +328,9 @@ function changeCount(e) {
             if (target.classList.contains('counter-minus')) {
                 food.count--;
 
-                //если позиция 0 шт
+                //if 'food count = 0', then find 'id' food and remove food from cart
                 if (food.count === 0) {
-                    cart.splice(cart.indexOf(food), 1); //найдем айдишник товара и удалим из масива карточки
+                    cart.splice(cart.indexOf(food), 1);
                 }
             }
 
@@ -310,7 +344,6 @@ function changeCount(e) {
 
 
 function init() {
-    //брабатываем ответ промиса 
     getData('./db/partners.json')
     .then(function(data) {
         data.forEach(createCardRestaurant);
@@ -324,15 +357,17 @@ function init() {
     buttonClearCart.addEventListener('click', () => {
         cart.length = 0;
         renderCart();
-
+        toggleModal();
     });
 
     modalBody.addEventListener('click', changeCount);
     closeBtn.addEventListener('click', toggleModal);
     cardsMenu.addEventListener('click', addToCart);
-    cardsRestaurants.addEventListener('click', openGoods); //клик на карточке через делегирование
+    cardsRestaurants.addEventListener('click', openGoods); //click on card through delegation
+
     logo.addEventListener('click', () => {
         containerPromo.classList.remove('hide');
+        swiper.init();
         restaurants.classList.remove('hide');
         menu.classList.add('hide');
     });
@@ -351,15 +386,15 @@ function init() {
                 e.target.value = '';
                 setTimeout(() => {
                     e.target.style.backgroundColor = '';
-                }, 1500); //очищаем поле поиска после 1.5с
+                }, 1500); //clear search input after 1.5s
                 return;
             }
 
             getData('./db/partners.json')
-                .then(function (data) { //делаем запрос, получаем всех партнеров
+                .then(function (data) { //send the request and get all partners
                     return data.map(function(partner) {
                         return partner.products;
-                    });//перебираем данные, возвращая массив
+                    });//iterating the data and return an array
                 })
                 .then(function(linksProduct) {
                     cardsMenu.textContent = '';
@@ -370,10 +405,11 @@ function init() {
 
                                 const resultSearch = goods.filter(function(item) {
                                     const name = item.name.toLowerCase();
-                                    return name.includes(value.toLowerCase()); //возвращаем только те карточки, ктр-е совпадают с value
+                                    return name.includes(value.toLowerCase()); //return cards that contain Value
                                 });
                                 
                                 containerPromo.classList.add('hide');
+                                swiper.destroy(false);
                                 restaurants.classList.add('hide');
                                 menu.classList.remove('hide');
 
@@ -391,22 +427,6 @@ function init() {
 }
 
 init();
-
-//SLIDER SWIPER
-
-new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: true,
-    speed: 400,
-    spaceBetween: 10,
-    direction: 'horizontal',
-    effect: 'fade',
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
-        },
-});
 
 //SWITCHER
 

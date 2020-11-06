@@ -21,7 +21,9 @@
     --modal-color: rgba(0, 0, 0, 0.4);
     --cart-border: #40A9FF;
     --price-cart-btn: #262626;
-
+    --bgrnd01: #D6E4FF;
+    --bgrnd02: #FFF1F0;
+    --bgrnd03: #FFF566;
     --color-1: #fff;
     --color-2: #122335;
 }
@@ -42,10 +44,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* .main {
-    background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
-} */
 
 .header {
     display: flex;
@@ -73,7 +71,7 @@ body {
 
 .input-address {
     width: 100%;
-    background-image: url(../img/home.svg);
+    background-image: url('../img/home.svg');
     background-repeat: no-repeat;
 }
 
@@ -105,16 +103,16 @@ body {
 }
 
 .button-primary {
-    background: #1890ff;
-    border: 1px solid #1890ff;
-    color: #fff;
+    background: var(--btn-entry-bg);
+    border: 1px solid var(--btn-entry-bg);
+    color: var(--bgrnd-color);
     margin-right: 10px;
 }
 
 .button-primary:hover {
-    background: #ffffff;
-    border: 1px solid #d9d9d9;
-    color: #595959;
+    background: var(--bgrnd-color);
+    border: 1px solid var(--input-border);
+    color: var(--link-color);
 }
 
 .button-auth {
@@ -128,60 +126,60 @@ svg.icon-logo {
 .button-primary .button-auth-svg {
     width: 24px;
     height: 24px;
-    background-color: #fff;
+    background-color: var(--bgrnd-color);
     -webkit-mask: url("../img/icon/user.svg") no-repeat 50% 50%;
     mask: url("../img/icon/user.svg") no-repeat 50% 50%;
     background-repeat: no-repeat;
 }
 
 .button-primary:hover .button-auth-svg {
-    background-color: #595959;
+    background-color: var(--link-color);
 }
 
 .button .button-cart-svg {
     width: 24px;
     height: 24px;
-    background-color: #595959;
-    -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
-    mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    background-color: var(--link-color);
+    -webkit-mask: url('../img/icon/shopping-cart.svg') no-repeat 50% 50%;
+    mask: url('../img/icon/shopping-cart.svg') no-repeat 50% 50%;
     background-repeat: no-repeat;
 }
 
 .button-cart:hover {
-    border: 1px solid#1890ff;
-    color: #1890ff;
+    border: 1px solid var(--btn-entry-bg);
+    color: var(--btn-entry-bg);
 }
 
 .button-cart:hover .button-cart-svg {
-    background-color:#1890ff;
+    background-color: var(--btn-entry-bg);
 }
 
 .button-out-svg {
     width: 24px;
     height: 24px;
-    background-color: #fff;
+    background-color: var(--bgrnd-color);
     -webkit-mask: url('../img/icon/logout.svg') no-repeat 50% 50%;
-    mask: url(../img/icon/logout.svg) no-repeat 50% 50%;
+    mask: url('../img/icon/logout.svg') no-repeat 50% 50%;
     background-repeat: no-repeat;
     -webkit-mask-size: 20px;
     mask-size: 20px;
 }
 
 .button-primary:hover .button-out-svg {
-    background-color: #595959;
+    background-color: var(--link-color);
 }
 
 .button-cart-svg-incard {
     width: 24px;
     height: 24px;
-    background-color: #fff;
-    -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
-    mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%;
+    background-color: var(--bgrnd-color);
+    -webkit-mask: url('../img/icon/shopping-cart.svg') no-repeat 50% 50%;
+    mask: url('../img/icon/shopping-cart.svg') no-repeat 50% 50%;
     background-repeat: no-repeat;
 }
 
 .button-primary:hover .button-cart-svg-incard {
-    background-color: #595959;
+    background-color: var(--link-color);
     opacity: 1;
 }
 
@@ -209,13 +207,13 @@ svg.icon-logo {
     background: var(--promo-bg);
 }
 .promo-kebab {
-    background: #D6E4FF;
+    background: var(--bgrnd01);
 }
 .promo-vegetables {
-    background:#FFF1F0;
+    background: var(--bgrnd02);
 }
 .promo-sushi {
-    background:  #FFF566;
+    background: var(--bgrnd03);
 }
 
 .active-img {
@@ -306,7 +304,7 @@ svg.icon-logo {
 .input-search {
     width: 300px;
     flex: 0.7;
-    background-image: url(../img/search.svg);
+    background-image: url('../img/search.svg');
     background-repeat: no-repeat;
     margin-left: auto;
 }
@@ -361,7 +359,6 @@ div.card:hover {
     opacity: 0.8;
 }
 
-
 .card-image {
     width: 100%;
     height: 250px;
@@ -412,12 +409,12 @@ div.card:hover {
 }    
 
 .rating {
-    background-image: url("../img/icon/rating.svg");
+    background-image: url('../img/icon/rating.svg');
     background-repeat: no-repeat;
     background-position: 0 7px;
     padding-left: 20px;
     margin-right: 26px;
-    color: #ffc107;
+    color: var(--rating-color);
     font-weight: bold;
     font-size: 18px;
     line-height: 32px;
@@ -510,8 +507,6 @@ div.card:hover {
     margin-right: 10px;
 }
 
-
-
 .card-price-bold {
     font-weight: bold;
     font-size: 20px;
@@ -528,8 +523,6 @@ div.card:hover {
     display: none;
     margin: 0 5px;
 }
-
-
 
 /* FOOTER */
 
@@ -556,8 +549,6 @@ div.card:hover {
     font-size: 18px;
     line-height: 21px;
     transition: border 0.3s ease-out;
-
-
 }
 
 .footer-link:after {
@@ -588,7 +579,6 @@ div.card:hover {
 .social-link:not(:last-child) {
     margin-right: 21px;
 }
-
 
 /* MODAL */
 
@@ -661,7 +651,6 @@ div.card:hover {
     margin: 0 10px;
 }
 
-
 .modal-footer {
     margin-top: 52px;
 }
@@ -693,7 +682,7 @@ div.card:hover {
 .modal-dialog {
     max-width: 780px;
     width: 95%;
-    background: #ffffff;
+    background: var(--bgrnd-color);
     border-radius: 5px;
     margin: 40px auto 0;
     padding: 40px 45px;
@@ -763,7 +752,7 @@ div.card:hover {
     right: 0;
     display: inline-block;
     width: 3.8rem;
-    height: 2rem;    
+    height: 2rem;
 }
 
 .switch-input {
