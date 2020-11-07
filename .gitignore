@@ -1,0 +1,9 @@
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+.jshint
+/preview
+
